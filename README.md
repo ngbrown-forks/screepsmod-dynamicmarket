@@ -7,6 +7,20 @@
 1. `npm install screepsmod-dynamicmarket` in your mods folder. / (Or use steam workshop)
 2. Configure!
 
+## Create NPC terminals
+
+If there are no system (`null` user) terminals to trade with then at least one will need to be created. Access the server administrative prompt through the Steam GUI or using this console command:
+
+```shell
+npx screeps cli
+```
+
+Create a terminal, preferably in a permanent wall with the following command. Adjust the `room` and `x` and `y` as needed:
+
+```js
+storage.db["rooms.objects"].insert({type:'terminal',x:45,y:45,room:'W0N0',notifyWhenAttacked:false,user:null,store:{energy:0},storeCapacity:300000,hits:3000,hitsMax:3000})
+```
+
 # Features
 
 - THIS NEEDS A LOT OF TESTING THAT I CANNOT DO ON A SOLO SERVER
